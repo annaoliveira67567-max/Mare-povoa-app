@@ -64,4 +64,66 @@ st.subheader("🏖️ Praias próximas")
 st.success("🟢 Praia da Lagoa - 0.5km - Própria")
 st.warning("🟡 Praia de Aver-o-Mar - 2.1km - Atenção")
 st.success("🟢 Praia da Fragosa - 1.2km - Própria")
+# --- NOVOS CARDS - Estilo Samsung Weather ---
+import requests
+lat, lon = 41.38, -8.76 # Póvoa de Varzim
+
+# Pega dados extras
+url = f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&current=relative_humidity_2m,dew_point_2m,uv_index,wind_speed_10m,wind_direction_10m&timezone=auto"
+dados = requests.get(url).json()['current']
+
+humidade = dados['relative_humidity_2m']
+uv = dados['uv_index']
+vento_vel = dados['wind_speed_10m']
+vento_dir = dados['wind_direction_10m']
+orvalho = dados['dew_point_2m']
+
+st.markdown(f"""
+<style>
+.card-grid {{ display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }}
+.card {{ background: linear-gradient(180deg, #1e3a8a 0%, #0f172a 100%); border-radius: 24px; padding: 20px; color: white; }}
+.card-title {{ font-size: 14px; opacity: 0.8; }}
+.card-value {{ font-size: 36px; font-weight: bold; margin-top: 60px; }}
+.bar {{ height: 12px; background: #334155; border-radius: 10px; margin-top: 10px; }}
+.bar-fill {{ height: 100%; border-radius: 10px; }}
+.wind-compass {{ width: 120px; height: 120px; border: 8px solid #94a3b8; border-radius: 50%; display:flex; align-items:center; justify-content:center; position: relative; margin: 20px auto; }}
+</style>
+
+<div class="card-grid">
+  <div class="card">
+    <div class="card-title">☀️ Índice UV<br>Está baixo</div>
+    <div class="card-value">Baixo</div>
+    <div class="bar"><div class="bar-fill" style="width:{uv*10}%; background: linear-gradient(90deg, #22c55e, yellow, red, purple);"></div></div>
+    <small>{uv}</small>
+  </div>
+  <div class="card">
+    <div class="card-title">💧 Umidade<br>É semelhante à de ontem</div>
+    <div class="card-value">{humidade}%</div>
+    <div class="bar"><div class="bar-fill" style="width:{humidade}%; background: #7dd3fc;"></div></div>
+  </div>
+  <div class="card">
+    <div class="card-title">💨 Vento<br>Está calmo</div>
+    <div class="wind-compass">
+      <div style="transform: rotate({vento_dir}deg);">▼</div>
+      <div style="position:absolute; text-align:center;"><b style="font-size:28px">{vento_vel:.0f}</b><br>km/h</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">🌡️ Ponto de orvalho<br>Umidade notável</div>
+    <div class="card-value" style="margin-top: 90px;">{orvalho:.0f}°</div>
+  </div>
+</div>
+
+<div class="card" style="margin-top:12px;">
+  <div class="card-title">Corrida</div>
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:10px;">
+    <div><span style="font-size:40px">🏃</span><br><b>Boa</b><br><small>Bom clima para corrida neste momento</small></div>
+    <div style="display:flex; gap:20px; text-align:center;">
+      <div>01:00<br>🙂<br><small>Boa</small></div>
+      <div>02:00<br>🙂<br><small>Boa</small></div>
+      <div>03:00<br>🙂<br><small>Boa</small></div>
+    </div>
+  </div>
+</div>
+""", unsafe_allow_html=True)
 st.info("Dados: IPMA + IH API")
