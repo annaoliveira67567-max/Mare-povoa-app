@@ -1,5 +1,17 @@
-import streamlit as st
+import streamlit as st 
 import requests
+# --- PWA - Deixa instalável ---
+import streamlit.components.v1 as components
+components.html("""
+<link rel="manifest" href="https://raw.githubusercontent.com/annaoliveira67567-max/mare-povoa-app/main/manifest.json">
+<meta name="theme-color" content="#0a4a7a">
+<link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3105/3105807.png">
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('data:text/javascript;base64,' + btoa('self.addEventListener(\"fetch\", e=>{})'));
+}
+</script>
+""", height=0)
 from datetime import datetime
 
 st.set_page_config(page_title="Maré Póvoa", page_icon="🌊", layout="centered")
