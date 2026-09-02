@@ -1,26 +1,30 @@
 # 🌊 Maré Póvoa App
 
-Um app simples para quem mora em Aver-o-Mar e quer saber na hora se a praia está boa para mergulho.
+> Saiba a melhor hora para ir à praia em Aver-o-Mar, Póvoa de Varzim e Aguçadoura.
 
-Feito de Figma → Código → Produto real no ar.
+**🔗 App no ar:** https://mare-povoa-app.streamlit.app/
 
-🔗 **Acesse o app ao vivo:** https://mar-p-voa-app-iemabm8gvj5pyoevtycw25.streamlit.app
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.35-red)
+![IPMA](https://img.shields.io/badge/Dados-IPMA%20%2B%20IH-green)
 
-### 🏖️ O que ele faz
-- Mostra temperatura atual da Póvoa de Varzim (dados reais do IPMA)
-- Exibe horários das marés altas e baixas
-- Indica se é bom para banho nas praias da Póvoa, Aver-o-Mar e Aguçadoura
-- Design responsivo para celular
+### 📸 Preview
+App mostra marés do dia, previsão IPMA e estado das praias com semáforo.
 
-### 🛠️ Como foi feito
-- **Design:** Figma
-- **Código:** Python + Streamlit
-- **Dados:** API do IPMA (Instituto Português do Mar e da Atmosfera)
-- **Deploy:** GitHub + Streamlit Cloud + Codespaces
+### ✨ Features
+- 🌊 Marés do dia (Baixa / Preia-mar) - dados Instituto Hidrográfico Leixões
+- ☁️ Previsão IPMA - temperatura, vento, estado do mar
+- 🏖️ Praias próximas - própria / atenção / imprópria
+- 📱 Design mobile-first
 
-### 🚀 Próximos passos
-- [ ] Integrar API real de marés do Instituto Hidrográfico
-- [ ] Adicionar mapa interativo das praias
-- [ ] Alertas de maré boa
+### 🛠️ Stack
+- **UX/UI:** Figma
+- **Frontend/Backend:** Python + Streamlit
+- **APIs:** IPMA + Instituto Hidrográfico
+- **Deploy:** Streamlit Cloud + GitHub
 
-Feito com 💙 por Anna Oliveira - UX Designer de Aver-o-Mar, Póvoa de Varzim
+### 👩‍💻 Autora
+Feito com 💙 por **Anna Oliveira** - UX Designer de Aver-o-Mar, Porto.
+
+---
+📍 Aver-o-Mar • Póvoa de Varzim • 2026
