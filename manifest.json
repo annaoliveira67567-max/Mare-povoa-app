@@ -1,0 +1,16 @@
+{
+  "name": "Maré Póvoa",
+  "short_name": "Maré Póvoa",
+  "description": "Previsão de marés e praias em Póvoa de Varzim - Aver-o-Mar",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f0f8ff",
+  "theme_color": "#0a4a7a",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/3105/3105807.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
