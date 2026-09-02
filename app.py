@@ -3,9 +3,11 @@ import requests
 # --- PWA - Deixa instalável ---
 import streamlit.components.v1 as components
 components.html("""
-<link rel="manifest" href="https://raw.githubusercontent.com/annaoliveira67567-max/mare-povoa-app/main/manifest.json">
+<link rel="manifest" href='data:application/json;base64,eyJuYW1lIjogIk1hcsOpIFDDs3ZvYSIsICJzaG9ydF9uYW1lIjogIk1hcsOpIFDDs3ZvYSIsICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLCAiYmFja2dyb3VuZF9jb2xvciI6ICIjZjBmOGZmIiwgInRoZW1lX2NvbG9yIjogIiMwYTRhN2EiLCAiaWNvbnMiOiBbeyJzcmMiOiAiaHR0cHM6Ly9jZG4taWNvbnMtcG5nLmZsYXRpY29uLmNvbS81MTIvMzEwNS8zMTA1ODA3LnBuZyIsICJzaXplcyI6ICI1MTJ4NTEyIiwgInR5cGUiOiAiaW1hZ2UvcG5nIn1dIH0='>
 <meta name="theme-color" content="#0a4a7a">
 <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3105/3105807.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Maré Póvoa">
 <script>
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('data:text/javascript;base64,' + btoa('self.addEventListener(\"fetch\", e=>{})'));
